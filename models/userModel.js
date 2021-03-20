@@ -19,6 +19,11 @@ const database = [
   },
 ];
 
+function (accessToken, refreshToken, profile, cb) {
+  let user = userController.getUserByGitHubIdOrCreate(profile);
+  return cb(null, user);
+}
+
 const userModel = {
   findOne: (email) => {
     const user = database.find((user) => user.email === email);

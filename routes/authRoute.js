@@ -20,14 +20,14 @@ router.get("/logout", (req, res) => {
 });
 
 //added for git login
-router.get('/github',
+router.get('auth/github',
   passport.authenticate('github', { scope: ['user:email'] }));
 
-router.get('/github/callback',
+router.get('auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/login' }),
   function (req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/');
+    res.redirect('/dashboard');
   });
 //added for git login
 
