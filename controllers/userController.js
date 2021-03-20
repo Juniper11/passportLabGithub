@@ -10,8 +10,8 @@ const getUserByGitHubIdOrCreate(profile) {
   }
   else {
     user = {
-      id: id.user,
-      name: name.user
+      id: profile.id,
+      name: profile.userName
     }
     //add user to database for new user
     database.push(user)
